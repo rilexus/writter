@@ -1,4 +1,4 @@
-# writer
+# Writer
 
 
 ## Description
@@ -10,22 +10,27 @@ Application to manage personal notes.
 * NestJS
 * MongoDB(Mongoose)
 
-## Installation
 
+## Installation
 ```bash
 $ npm install
 $ cd ./writer
 $ npm install
 ```
 
-## Running the app
-
+## Running development env
 ```bash
-# development
+# start the client
 $ npm run start:client
-$ npm run start:webpack
+
+# start the database
 $ npm run start:db
+
+# start the server
 $ npm run start:server
+
+# start the nest hot reload
+$ npm run start:webpack
 ```
 
 ## Test

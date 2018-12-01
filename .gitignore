@@ -28,7 +28,6 @@ build/Release
 node_modules
 
 dist/*
-!dist/server.js
 
 public/*
 
