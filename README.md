@@ -31,6 +31,14 @@ $ npm run start:server
 
 # start the nest hot reload
 $ npm run start:webpack
+
+
+# for testing here is are logins
+## user
+$ stanis
+
+## password
+$ abc
 ```
 
 ## Test
