@@ -1,0 +1,16 @@
+<div class="input-wrapper" appColorMode>
+
+  <i class="material-icons icon icon-minimize"
+     *ngIf="searchIconVisible === true"
+     (click)="showSearchInputField()">{{iconName}}</i>
+
+  <input class="input"
+         [(ngModel)]="searchNameValue"
+         [ngClass]="{'visible': searchInputFieldIsVisible === true}"
+         (keyup)="emitInputEvent($event.target.value)"
+         type="text" placeholder="{{inputPlaceHolder}}">
+
+  <i class="material-icons icon icon-minimize"
+     *ngIf="searchIconVisible === false"
+     (click)="hideSearchInputField()">close</i>
+</div>

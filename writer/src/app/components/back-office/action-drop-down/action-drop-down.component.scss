@@ -1,0 +1,25 @@
+@import "../../../style/utils/vars/var";
+
+.action-drop-down-wrapper{
+
+  .list-wrapper{
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: $shadow-main;
+
+    .list-element{
+      padding: {
+        top: 15px;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+      };
+      &:hover{
+        color: $color-blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+}

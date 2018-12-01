@@ -1,0 +1,44 @@
+<div class="row preview-wrapper" appColorMode>
+
+    <div class="col-xs-100 search-wrapper">
+
+        <div class="search-input">
+            <input type="text" class="input input-big" (keyup)="search($event.target.value)" placeholder="Search">
+        </div>
+
+        <div class="list-name">
+            <div class="name">Notes</div>
+            <i class="material-icons icon icon-minimize" (click)="addText()">add_circle_outline</i>
+        </div>
+    </div>
+
+    <div class="col-xs-100 list-wrapper">
+        <ul class="chapterList list">
+            <li class="list-element" *ngFor="let preview of textsPreviews" (click)="selectText(preview.id)">
+                <div class="flex flex-between">
+                    <div>
+                        <div class="title" id="{{'title_' + preview.id}}">{{inceptHTML('title_' + preview.id,
+                            preview.title)}}
+                        </div>
+                        <div class="body" id="{{'body_' + preview.id}}">
+                            {{inceptHTML('body_' + preview.id, preview.body)}}
+                        </div>
+                        <div class="stats-wrapper">
+                            <div class="stat created">
+                                {{preview.createdDate}}
+                            </div>
+                            <div class="stat wordcount">
+                                Words: {{preview.wordsCount}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-center">
+                        <i class="material-icons icon icon-minimize"
+                           (click)="removeText(preview.id)">clear</i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>

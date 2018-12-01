@@ -1,0 +1,115 @@
+@import "../../../../../../style/utils/vars/var";
+@import "../../../../../../style/components/inputs";
+@import "../../../../../../style/components/subcomponents";
+
+.signup-wrapper{
+  .subcomponent-title{
+
+  }
+  .input{
+    margin:{
+      left: 0;
+      right: 0;
+    };
+    // background-color: $color-background-input;
+    width: 100%;
+    &:focus{
+      background-color: darken($color-background-input, 5%);
+    }
+  }
+
+  .indicator-input-wrapper{
+    background-color: $color-background-input;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    margin-top: 3px;
+
+    &.focused{
+      background-color: darken($color-background-input, 5%);
+    }
+
+    input{
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      font-size: .9rem;
+      outline: none;
+      padding: {
+        top: 10px;
+        bottom: 10px;
+        left: 15px;
+      };
+      &:focus{
+        color: $color-blue;
+        box-shadow: none;
+        border: none;
+      }
+    }
+
+    .indicator-wrapper{
+      background-color: darken($color-background-input, 10%);
+      width: 100%;
+      position: relative;
+
+      .indicator-line {
+        background-color: $color-blue;
+        height: 2px;
+        position: relative;
+        transition: width .2s;
+
+        &.confirm{
+          background-color: darken($color-background-input, 10%);
+        }
+
+        &.isValid{
+          transition: background-color .2s;
+          background-color: $color-green;
+        }
+      }
+    }
+  }
+
+  &.dark{
+    .input{ // name && email
+      &:focus{
+        background-color: $color-dark-mode-background;
+      }
+    }
+
+    .indicator-input-wrapper{
+      border: 1px solid $color-dark-mode-border;
+      background-color: transparent;
+
+      &.focused{
+        background-color: $color-dark-mode-background;
+      }
+
+      input{
+        background-color: $color-background-dark-mode;
+        color: $color-text-second;
+        &:focus{
+          background-color: $color-dark-mode-background;
+        }
+      }
+
+      .indicator-wrapper{
+        // background-color: $color-dark-mode-background;
+        background-color: lighten($color-dark-mode-background, 5%);
+        .indicator-line {
+          &.confirm{
+             background-color: lighten($color-dark-mode-background, 5%);
+          }
+          &.isValid{
+            transition: background-color .2s;
+            background-color: $color-green;
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+

@@ -1,0 +1,69 @@
+@import "../../../../../../../style/utils/vars/var";
+
+.search-bar-wrapper{
+  // padding-bottom: 15px;
+  background-color: $color-background-second;
+  // padding-top: 15px;
+
+  .search-input{
+    input.input{
+      background-color: $color-background-input;
+      width: 95%;
+      border: 1px solid #d9d9d9;
+    }
+    padding-left: 13px;
+    padding-right: 15px;
+    // margin-bottom: 15px;
+  }
+
+  .suggestion-list{
+    position: absolute;
+    top:45px;
+    background-color: $color-background-second;
+    ul{
+      box-shadow: $shadow-main;
+      li{
+        font-size: .9rem;
+        &:hover{
+          background-color:darken($color-background-second, 5%);
+        }
+        cursor: pointer;
+        line-height: 1.3;
+        .title {
+          font-weight: 600;
+          padding-bottom: 5px;
+        }
+        .preview{
+
+        }
+
+      }
+    }
+  }
+
+  &.dark {
+
+      background-color: $color-dark-mode-background-second;
+
+      //.search-input{
+      //  input.input{
+      //    background-color: $color-background-dark-mode;
+      //    border: 1px solid $color-dark-mode-border;
+      //    color: $color-text-second;
+      //  }
+      //}
+
+      .suggestion-list{
+        background-color: $color-dark-mode-background-second;
+        ul{
+          li{
+            &:hover{
+              background-color:lighten($color-dark-mode-background-second, 5%);
+            }
+            color: $color-text-second;
+          }
+        }
+      }
+
+  }
+}

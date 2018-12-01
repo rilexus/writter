@@ -1,0 +1,23 @@
+<div class="row text-area-wrapper" appColorMode>
+  <div class="menueWindow" *ngIf="wasSelected === true"
+       [ngStyle]="{'top': clickPoint.y + 'px', 'left': clickPoint.x + 'px'}">
+    <app-hover-menue
+      (buttonPushed)="styleSelection($event)"></app-hover-menue>
+  </div>
+  <div class="col-xs-100 _textarea">
+    <div class="gradient gradient-top"></div>
+    <div class="textarea" contenteditable="true"
+         (paste)="onPaste($event)"
+         id="textareaDiv"
+         #textArea
+         [ngStyle]="{'fontSize': fontSizeOfText + 'px', 'fontFamily': fontFamilyOfText, 'lineHeight': 1.5}"
+         (keyup)="onKeyPress($event, textArea)"
+         (click)="onClick($event)"
+         (mouseleave)="onMouseLeave($event)"
+         (mouseup)="onMouseUp($event)"
+         (dblclick)="doubleClick($event)"
+         (mousedown)="onMouseDown($event)">
+    </div>
+    <div class="gradient gradient-bottom"></div>
+  </div>
+</div>

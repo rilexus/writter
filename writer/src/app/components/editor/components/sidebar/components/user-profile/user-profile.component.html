@@ -1,0 +1,6 @@
+<div class="row user-profile-wrapper">
+  <div class="col-xs-100" *ngIf="userIsLogedin">
+    <button class="button button-link" (click)="logout()">Logout</button>
+    <button class="button button-link" routerLink="/backoffice" *ngIf="authService.userIsAdmin()">User list</button>
+  </div>
+</div>

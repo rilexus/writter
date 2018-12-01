@@ -1,0 +1,24 @@
+<div class="row search-bar-wrapper" appColorMode>
+
+  <div class="col-xs-100 text-center search-input">
+    <app-collapsing-input [iconName]="'search'" [inputPlaceHolder]="'Search'" (inputEvent)="search($event)"></app-collapsing-input>
+    <!--<input [(ngModel)]="searchString" (keyup)="search()" placeholder="Search" class="input" type="text">-->
+  </div>
+
+  <div (mouseleave)="clearSugestionsList()" class="col-xs-100 suggestion-list list-wrapper" *ngIf="textSuggestionList.length > 0">
+    <div class="list-name">
+      Search Result
+    </div>
+    <ul class="list">
+      <li class="list-element" (click)="selectText(suggestion.confData.id)" *ngFor="let suggestion of textSuggestionList">
+        <div class="title">
+          {{suggestion.preview.title}}
+        </div>
+        <div class="preview">
+          {{suggestion.preview.preview}}
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>

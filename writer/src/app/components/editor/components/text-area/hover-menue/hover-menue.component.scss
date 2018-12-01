@@ -1,0 +1,121 @@
+@import "../../../../../style/utils/vars/var";
+
+.hover-menue{
+  // height: 60px;
+  transition: height 1s;
+  z-index: 110;
+  box-shadow: $shadow-main;
+  background-color: $color-text-second;
+  border-radius: 5px;
+  padding: {
+    right: 15px;
+    left: 15px;
+  };
+
+  .settings-group{
+    padding: {
+      left: 5px;
+      right: 5px;
+      top: 5px;
+    };
+    .icon-block{
+      .icon{
+        margin: {
+          top: 15px;
+          right: 15px;
+          left: 15px;
+          bottom: 0;
+        };
+        &.arrow{
+          margin: {
+            top: 0;
+            bottom: 5px;
+          };
+
+        }
+      }
+    }
+    .icon{
+      color: white;
+      margin: 15px;
+      &:hover {
+        color: $color-blue;
+      }
+      &.hiliteColor{
+        &_red{
+          color: red;
+        }
+        &_blue{
+          color: #99beff;
+        }
+        &_yellow{
+          color: #F6E803;
+        }
+      }
+    }
+  }
+  .menue-area-wrapper{
+    transition: height .2s;
+    height: 60px;
+    overflow: hidden;
+    &.closed{
+      height: 0;
+      overflow: hidden;
+    }
+    .menue-area{
+      hr{
+        border: none;
+        border-top: 1px solid #a9a9a9;
+        margin: 0;
+        margin-bottom: 15px;
+      }
+      padding: {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+      }
+
+      &.text-menue-area{
+        .headline{
+          font-weight: 600;
+          color: white;
+        }
+        .subtitle{
+          font-weight: 200;
+          color: white;
+        }
+        .body{
+          font-weight: 400;
+          color: white;
+        }
+      }
+
+      &.color-menue-area{
+        .color{
+          height: 25px;
+          width: 25px;
+          border-radius: 17px;
+          margin: 5px;
+          cursor: pointer;
+          border: 2px solid white;
+          &:hover{
+            border: 2px solid $color-blue;
+          }
+          &-red{
+            background-color: $color-red;
+          }
+          &-green{
+            background-color: #6CD126;
+          }
+          &-yellow{
+            background-color: #F6E803;
+          }
+          &-blue{
+            background-color: #99beff;
+          }
+
+        }
+      }
+    }
+  }
+}

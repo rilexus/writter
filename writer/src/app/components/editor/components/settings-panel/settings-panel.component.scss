@@ -1,0 +1,20 @@
+.settings-wrapper {
+  display: flex;
+  align-items: center;
+  .interaction-area{
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .application-settings{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+  }
+  .text-settings{
+
+  }
+  .dark {
+
+  }
+}

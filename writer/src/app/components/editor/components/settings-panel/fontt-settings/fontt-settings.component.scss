@@ -1,0 +1,85 @@
+@import "../../../../../style/utils/vars/var";
+
+.font-settings-wrapper{
+  display: flex;
+  justify-content: flex-end;
+  //padding-right: 100px;
+
+  .size-wrapper{
+    .icon{
+      color: $color-text-second;
+
+      &:hover {
+        color: $color-blue;
+      }
+
+      &-text_fields{
+        color: $color-text-second;
+        &:hover {
+          color: $color-text-second;
+        }
+      }
+      &-minimize{
+        //padding-bottom: 7px;
+      }
+      &-minus{
+        padding-bottom: 8px;
+      }
+      &-add{
+
+      }
+
+    }
+    align-items: center;
+    display: flex;
+    margin-right: 15px;
+  }
+
+  .font-family-wrapper {
+    display: flex;
+    align-items: center;
+    // font-family: "Lucida Sans Typewriter";
+    font-size: 0.9rem;
+    color: $color-text-second;
+    .font-family{
+      width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-align: center;
+      font-size: .8rem;
+      &:hover {
+        cursor: pointer;
+        color: $color-blue;
+      }
+    }
+    .font-family-list{
+      background-color: $color-background;
+      z-index: 100;
+      position: absolute;
+      top: 30px;
+      right: 15px;
+      padding: {
+        bottom: 15px;
+        left: 5px;
+        top: 15px;
+        right: 5px;
+      };
+      border-radius: $border-radius-middle;
+      box-shadow: $shadow-second;
+      li{
+        font-size: .8rem;
+        padding: {
+          left: 15px;
+          right: 15px;
+          top: 5px;
+          bottom: 5px;
+        };
+        cursor: pointer;
+        line-height: 1.5;
+        &:hover{
+          color: $color-blue;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div class="row component-wrapper subcomponent" id="custom-input">
+  <div class="col-xs-100">
+    <!--set max width of whole in pot and indicator-->
+    <div class="wrapper">
+      <div class="disclaimer">
+        <div class="subcomponent-title">Login</div>
+        <!--<div class="text">Log in if you want to use all features of this site.</div>-->
+      </div>
+
+      <div class="pseudo-input">
+        <div class="flex flex-start ">
+          <input class="input" type="{{getCurrentStageData().inputType}}" (keyup.enter)="next()" (keyup)="setStageValue($event)" placeholder="{{getCurrentStageData().placeholder}}" [value]="getCurrentStageData().value">
+          <button class="step-button step-button-next" *ngIf="stageIsValid(getCurrentStageData()) && !allChecked()" (click)="next()">Next</button>
+          <button class="step-button step-button-next" *ngIf="allChecked()" (click)="next()">Login</button>
+        </div>
+
+        <div class="indicator-wrapper ">
+          <div class="indicator" [ngClass]="{'paintRed': loginInvalid === true}" [ngStyle]="{'width': indicatorLenght + '%'}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="button-wrapper">
+      <button class="button button-link" (click)="showLogin()">Sing Up</button>
+    </div>
+  </div>
+</div>

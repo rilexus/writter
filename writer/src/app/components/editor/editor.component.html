@@ -1,0 +1,50 @@
+<div class="row editor-wrapper" appColorMode>
+
+  <div class="col-xs-100">
+    <app-settings-panel></app-settings-panel>
+  </div>
+
+
+  <div class="sidebar-some
+    col-xs-50
+    col-sm-40
+    col-md-26
+    col-lg-22
+    col-xlg-20
+    col-xxlg-12"
+    [ngClass]="{'sidebarIsVisible': sideBarVisibility === true}">
+
+    <div class="close-button">
+      <button class="button button-link button-icon" (click)="closeSidebar()">
+        <i class="material-icons icon icon-minimize">keyboard_arrow_left</i>
+        <span class="text">
+          Sidebar
+        </span>
+      </button>
+    </div>
+
+    <div class="sidebar-wrapper">
+      <!--(mouseleave)="closeSidebar()"-->
+      <div class="sidebar">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-xs-90 col-xs-offset-5
+              col-sm-80 col-sm-offset-10
+              col-md-66 col-md-offset-26
+              col-lg-54 col-lg-offset-23
+              col-xlg-38 col-xlg-offset-31">
+    <app-text-area></app-text-area>
+  </div>
+  <!--<div class="col-xs-13 mini-view ">-->
+    <!--<app-mini-view></app-mini-view>-->
+  <!--</div>-->
+
+  <div class="col-xs-100">
+    <app-stats></app-stats>
+  </div>
+
+</div>

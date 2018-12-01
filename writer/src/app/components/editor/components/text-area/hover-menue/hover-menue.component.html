@@ -1,0 +1,55 @@
+<div class="hover-menue" (mouseleave)="onMouseOut()">
+  <div class="buttonArea flex flex-between">
+
+    <div class="settings-group">
+      <div class="icon-block" (mouseenter)="openMenueArea('text-menue-area')">
+        <i class="material-icons icon icon-minimize">text_fields</i>
+        <br>
+        <i class="material-icons icon icon-minimize arrow">arrow_drop_down</i>
+      </div>
+    </div>
+
+
+    <div class="settings-group font flex flex-between" (mouseenter)="closeMenue()">
+      <i class="material-icons icon icon-minimize" (click)="pushButton('bold', '')">format_bold</i>
+      <i class="material-icons icon icon-minimize" (click)="pushButton('italic', '')">format_italic</i>
+      <i class="material-icons icon icon-minimize" (click)="pushButton('underline', '')">format_underlined</i>
+    </div>
+
+    <div class="settings-group color flex flex-between" (mouseenter)="closeMenue()">
+      <div class="icon-block" (mouseenter)="openMenueArea('color-menue-area')">
+        <i class="material-icons icon icon-minimize" (click)="pushButton('hiliteColor', '#ff7577')">format_color_fill</i>
+        <br>
+        <i class="material-icons icon icon-minimize arrow">arrow_drop_down</i>
+      </div>
+      <!--<i class="material-icons icon hiliteColor_blue icon-minimize" (click)="pushButton('hiliteColor', '#99beff')">format_color_fill</i>-->
+      <!--<i class="material-icons icon hiliteColor_yellow icon-minimize" (click)="pushButton('hiliteColor', '#cec200')">format_color_fill</i>-->
+    </div>
+
+    <div class="settings-group remove flex flex-between" (mouseenter)="closeMenue()">
+      <i class="material-icons icon icon-minimize" (click)="pushButton('removeFormat', '')">format_clear</i>
+    </div>
+
+  </div>
+  <div class="menue-area-wrapper" [ngClass]="{'closed': menueOpen === false}" (mouseleave)="closeMenue()">
+    <div class="menue-area text-menue-area" *ngIf="textAreaOpen === true">
+      <hr>
+      <div class="flex flex-between">
+        <button class="button button-link headline" (click)="formatText('headline')">Headline</button>
+        <button class="button button-link subtitle" (click)="formatText('subtitle')">Subtitle</button>
+        <button class="button button-link body" (click)="pushButton('removeFormat', '')">Body</button>
+      </div>
+    </div>
+    <div class="menue-area color-menue-area" *ngIf="colorAreaOpen === true">
+      <hr>
+      <div class="flex flex-right">
+        <button class="color color-red" (click)="pushButton('hiliteColor', 'red')"></button>
+        <button class="color color-green" (click)="pushButton('hiliteColor', '#5ddc20')"></button>
+        <button class="color color-blue" (click)="pushButton('hiliteColor', '#00acff')"></button>
+        <button class="color color-yellow" (click)="pushButton('hiliteColor', '#dcdc40')"></button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

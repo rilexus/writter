@@ -1,0 +1,54 @@
+@import "../utils/vars/var";
+
+.list-wrapper{
+  .list-name{
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    padding: {
+      right: 15px;
+      left: 15px;
+      bottom: 5px;
+      top: 5px;
+    };
+    align-items: center;
+    border-bottom: 1px solid hsla(0, 0%, 85%, 1);
+  }
+  .list{
+    &:first-child{
+      border-top: none;
+    }
+
+    .list-element{
+      padding: {
+        top: 20px;
+        bottom: 20px;
+        left: 15px;
+        right: 15px;
+      }
+      // border-bottom: 1px solid $color-border;
+      // border-top: 1px solid $color-border;
+      color: $color-text;
+
+      &-column{
+        padding-left: 15px;
+      }
+    }
+
+  }
+}
+
+.dark{
+  .list-wrapper{
+    .list-name{
+      // border-bottom: 1px solid $color-dark-mode-border;
+      color: $color-text-second;
+    }
+    .list{
+      border-bottom: 1px solid $color-dark-mode-border;
+      .list-element{
+        border-bottom: 1px solid $color-dark-mode-border;
+      }
+    }
+  }
+}

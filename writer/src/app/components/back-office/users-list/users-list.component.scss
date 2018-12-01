@@ -1,0 +1,41 @@
+@import "../../../style/utils/vars/var";
+
+th{
+  text-align: left;
+}
+
+
+.user-list-wrapper{
+}
+
+.table-wrapper{
+
+  .no-entries-warning{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 15px;
+  }
+
+  width: 1200px;
+  .table{
+    th, td{
+      &.date{
+        color: $color-text-second;
+      }
+      &.type{
+        width: 110px;
+      }
+      &.email{
+        overflow-x: scroll;
+        color: $color-text-second;
+      }
+      &.name{
+        font-weight: 600;
+      }
+      &.password{
+        overflow-x: scroll;
+      }
+    }
+  }
+}

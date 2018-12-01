@@ -1,0 +1,11 @@
+<div class="row authentication-wrapper">
+
+  <div class="col-xs-100" *ngIf="!signUpISVisible">
+    <app-login [loginInvalid]="loginIsInvalid" (onLogin)="login($event)" (showSignUp)="showSignUp()"></app-login>
+  </div>
+
+  <div class="col-xs-100" *ngIf="signUpISVisible">
+    <app-signup (showLogin)="showLogin()"></app-signup>
+  </div>
+
+</div>

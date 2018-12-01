@@ -1,0 +1,68 @@
+<div class="row user-list-wrapper">
+  <div class="col-xs-100">
+
+    <div class="table-wrapper">
+
+      <div class="table-name">User List</div>
+
+      <div class="collapsing-input">
+        <app-collapsing-input
+                (inputEvent)="searchUserByNamePart($event)"
+                [inputPlaceHolder]="'Search | by Name'"
+                [iconName]="'search'">
+        </app-collapsing-input>
+      </div>
+
+      <div class="no-entries-warning" *ngIf="users.length === 0">
+        <div>
+          Loading...
+        </div>
+      </div>
+
+      <table class="table" *ngIf="users.length > 0">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col class="dates-column">
+          <col class="dates-column">
+          <col>
+        </colgroup>
+
+        <thead class="thead">
+          <tr>
+            <th scope="col">NAME</th>
+            <th class="type" scope="col">TYPE</th>
+            <!--<th scope="col">PASSWORD</th>-->
+            <th scope="col">EMAIL</th>
+            <th scope="col">CREATION DATE</th>
+            <th scope="col">LAST LOGIN</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr *ngFor="let user of users">
+            <td class="name">{{user.name}}</td>
+            <td class="type">{{user.role.join(' ')}}</td>
+            <td class="email">{{user.email}}</td>
+            <!--<td class="password">{{user.password}}</td>-->
+            <td class="date">{{user.creationDate}}</td>
+            <td class="date">{{user.lastLogin}}</td>
+            <td>
+              <app-action-drop-down (actionClicked)="onListElementAction($event, user)" [actions]="userActions"></app-action-drop-down>
+            </td>
+
+          </tr>
+        </tbody>
+
+        <tfoot class="tfoot">
+          <tr>
+            <td >User Count: {{users.length}}</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+
+  </div>
+</div>

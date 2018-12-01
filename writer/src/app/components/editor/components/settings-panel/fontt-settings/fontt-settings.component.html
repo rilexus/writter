@@ -1,0 +1,18 @@
+<div class="font-settings-wrapper">
+
+  <div class="size-wrapper">
+    <i class="material-icons icon icon-minimize icon-minus" (click)="decreaseFontSize()">minimize</i>
+    <i class="material-icons icon icon-minimize icon-text_fields" (click)="setDefault()">text_fields</i>
+    <i class="material-icons icon icon-minimize icon-add" (click)="increaseFontSize()">add</i>
+  </div>
+
+  <div class="font-family-wrapper">
+    <div class="font-family" (click)="openDropDown()" [ngStyle]="{'fontFamily': selectedFontFamily}">{{selectedFontFamily}}</div>
+    <ul class="font-family-list " *ngIf="dropDownValues.length > 0" (mouseleave)="closeDropDown()">
+      <li *ngFor="let value of dropDownValues" [ngStyle]="{'fontFamily': value}" (click)="selectFontFamily(value)">
+        {{value}}
+      </li>
+    </ul>
+    <i class="material-icons icon icon-minimize icon-add" (click)="openDropDown()">keyboard_arrow_down</i>
+  </div>
+</div>

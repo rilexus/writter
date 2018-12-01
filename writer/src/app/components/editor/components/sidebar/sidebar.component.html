@@ -1,0 +1,15 @@
+<div class="row sidebar-wrapper" appColorMode>
+
+  <div class="col-xs-100 authentication" *ngIf="!userLogedIn">
+    <app-authentication></app-authentication>
+  </div>
+
+  <div class="col-xs-100 notes-list" *ngIf="userLogedIn">
+    <app-preview-list></app-preview-list>
+  </div>
+
+  <div class="logout">
+    <app-user-profile></app-user-profile>
+  </div>
+
+</div>

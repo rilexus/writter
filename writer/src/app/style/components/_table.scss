@@ -1,0 +1,81 @@
+@import "../utils/vars/var";
+
+.table-wrapper{
+  padding: 15px;
+  display: inline-block;
+
+  .table-name{
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: {
+      left: 25px;
+      // bottom: 15px;
+    };
+  }
+
+  .table{
+    border-collapse:separate;
+    border-spacing: 0 2px; // border bottom
+    th, td {
+      font-size: 0.9rem;
+      min-width: 150px;
+      color: $color-text;
+      padding: {
+        left: 25px;
+        bottom: 5px;
+        top: 5px;
+      };
+    }
+
+    .thead{
+      th{
+        padding-bottom: 5px;
+        font-size: 0.7rem;
+        color: $color-text-second;
+      }
+    }
+
+    .thead, .tbody{
+      table-layout:fixed;
+      max-height: 600px;
+      overflow-y: scroll;
+      display: block;
+
+      tr{
+        display:table;
+        width:100%;
+        table-layout:fixed;/* even columns width , fix width of table too*/
+      }
+    }
+
+
+    .tbody{
+      tr{ // table row
+        border-radius: 5px;
+        background-color: white;
+        margin-bottom: 2px;
+        &:hover{
+          background-color: $color-background-second;
+        }
+        td{ // single entry in a row
+          padding: {
+            top: 3px;
+            bottom: 7px;
+          };
+        }
+      }
+    }
+
+    .tfoot{
+      tr{
+        td{
+          padding-top: 15px;
+          font-size: .7rem;
+
+        }
+      }
+    }
+
+  }
+
+}

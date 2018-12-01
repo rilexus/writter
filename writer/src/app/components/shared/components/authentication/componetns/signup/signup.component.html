@@ -1,0 +1,60 @@
+<div class="row signup-wrapper subcomponent" appColorMode>
+  <div class="col-xs-100 subcomponent-title">
+    Registration
+  </div>
+  <div class="col-xs-100">
+
+    <form action="" [formGroup]="signup" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <span class="input-group-title">Personal</span>
+        <input formControlName="name"
+               class="input input-big"
+               type="text"
+               placeholder="Name">
+
+        <input formControlName="email"
+               class="input input-big"
+               type="text" placeholder="Email">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-title">Security</span>
+
+        <div class="indicator-input-wrapper" [ngClass]="{'focused': passwordIsFocused }">
+          <input formControlName="password"
+                 class=""
+                 (focus)="handleInputFocus($event)"
+                 (blur)="handleInputUnfocus($event)"
+                 type="password"
+                 (keyup)="handlePasswordInput($event)"
+                 placeholder="Password">
+          <div class="indicator-wrapper">
+            <div class="indicator-line" [ngStyle]="{'width': indicatorLineWidth}" [ngClass]="{'isValid': passwordIsValid}"></div>
+          </div>
+        </div>
+
+        <div class="indicator-input-wrapper" [ngClass]="{'focused': passwordConfirmIsFocused }">
+          <input formControlName="conf_password"
+                 class=""
+                 (focus)="passwordConfirmIsFocused = true"
+                 (blur)="passwordConfirmIsFocused = false"
+                 (keyup)="checkIfEqual($event.target.value)"
+                 type="password"
+                 placeholder="Password(Confirmation)">
+          <div class="indicator-wrapper">
+            <div class="indicator-line confirm" [ngStyle]="{'width': '100%'}" [ngClass]="{'isValid': passAreEqual}"></div>
+          </div>
+        </div>
+        <!--<input formControlName="conf_password"-->
+               <!--class="input input-big"-->
+               <!--type="password"-->
+               <!--placeholder="Password(Confirmation)">-->
+      </div>
+
+      <div class="button-wrapper">
+        <button class="button button-link" (click)="_showLogin()">Cancel</button>
+        <button type="submit" class="button button-link" (click)="signUp()">Sing Up</button>
+      </div>
+    </form>
+  </div>
+</div>

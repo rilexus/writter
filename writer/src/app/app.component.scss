@@ -1,0 +1,12 @@
+@import "style/utils/vars/var";
+
+.app-wrapper {
+  height: 100vh;
+  width: 100vw;
+  min-width: 769px;
+  background-color: $color-background;
+
+  &.dark{
+    background-color: $color-background-dark-mode;
+  }
+}

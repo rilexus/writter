@@ -1,0 +1,9 @@
+<div class="action-drop-down-wrapper">
+  <i class="material-icons icon icon-minimize" (click)="showActionList()">more_vert</i>
+
+  <div *ngIf="actionsAreVisible === true" class="list-wrapper">
+    <ul class="list" (mouseleave)="hideActionList()">
+      <li class="list-element" *ngFor="let action of actions" (click)="actionClicked.emit(action)">{{action}}</li>
+    </ul>
+  </div>
+</div>

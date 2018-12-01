@@ -1,0 +1,100 @@
+@import "../../../../../../style/utils/vars/var";
+
+.preview-wrapper{
+
+  .search-wrapper{
+    height: 93px;
+    padding: {
+      left: 10px;
+      top: 10px;
+      right: 15px;
+      bottom: 5px;
+    };
+    border-bottom: 1px solid hsla(0, 0%, 85%, 1);
+
+    .list-name{
+      display: flex;
+      justify-content: space-between;
+      font-size: .9rem;
+      padding: {
+        top: 15px;
+        left: 5px;
+      };
+      align-items: center;
+    }
+
+    .input{
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+
+
+  .list-wrapper{
+    height: calc(100vh - 93px); // height of search input
+    .list{
+      height: 100%;
+      overflow: scroll;
+      min-width: 250px;
+      margin-right: -40px; //hide scrollbars
+      padding-right: 40px; //hide scrollbars
+    }
+    .list-element{
+      cursor: pointer;
+      &:hover {
+        background-color: hsla(0, 0%, 93%, 1);
+      }
+      max-height: 105px;
+      overflow: hidden;
+      color: $color-text;
+      //padding-top: 15px;
+      //padding-bottom: 15px;
+      // border-bottom: 1px solid hsla(0, 0%, 85%, 1);
+
+      .title{
+        font-weight: 600;
+        padding-bottom: 3px;
+        font-size: .9rem;
+        max-height: 1.1rem;
+        overflow: hidden;
+      }
+      .body{
+        line-height: 1.3;
+        font-size: .9rem;
+        opacity: .7;
+        max-height: 2rem;
+        overflow: hidden;
+      }
+      .stats-wrapper{
+        display: flex;
+        padding-top: 10px;
+        .stat{
+          padding-right: 15px;
+          font-size: .7rem;
+          color: $color-text-second;
+        }
+      }
+    }
+  }
+  &.dark{
+    .search-wrapper{
+      border-bottom-color: $color-dark-mode-border;
+      .list-name{
+        color: $color-text-second;
+       // border-bottom: 1px solid $color-dark-mode-border;
+      }
+    }
+    .list-wrapper {
+
+      .list-element {
+        color: $color-text-second;
+        border-bottom: 1px solid $color-dark-mode-border;
+        &:hover {
+          background-color: $color-dark-mode-background;
+        }
+      }
+    }
+
+  }
+}

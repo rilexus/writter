@@ -1,0 +1,27 @@
+@import "../../style/utils/vars/var";
+
+.header-wrapper {
+
+  height: 45px;
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+
+  &:hover{
+    box-shadow: $shadow-main;
+
+  }
+
+  .logo{
+    font-family: "Lucida Sans Typewriter";
+    font-size: 0.8rem;
+    color: $color-text-second;
+    font-weight: 600;
+    margin: 15px;
+
+    &:hover{
+      cursor: pointer;
+      color: $color-blue;
+    }
+  }
+}

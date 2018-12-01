@@ -1,0 +1,122 @@
+@import "../../../../../../style/utils/vars/var";
+@import "../../../../../../style/components/subcomponents";
+
+$nextButtonWidth: 40px;
+$inputRadius: 5px;
+
+
+
+.flex{
+  display: flex;
+}
+.flex-start{
+  justify-content: flex-start;
+}
+.wrapper{
+  position: relative;
+  width: 100%;
+  //padding: {
+  //  left: 15px;
+  //  right: 15px;
+  //};
+
+  //.disclaimer{
+  //  padding-bottom: 7px;
+  //
+  //  .head{
+  //    font-size: 1.3rem;
+  //    font-weight: 600;
+  //  }
+  //  .title{
+  //    font-size: 1.2rem;
+  //    font-weight: 600;
+  //    margin-top: 15px;
+  //  }
+  //  .text{
+  //    font-size: .8rem;
+  //    color: $color-text-second;
+  //  }
+  //}
+
+  .step-button{
+    font-size: .7rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &-next{
+      background-color: $color-background-input;
+      width: $nextButtonWidth;
+      color: $color-blue;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 0;
+      border-top-right-radius: $inputRadius; // cut the corners
+      border-bottom-right-radius: $inputRadius;
+    }
+    &-back{
+      color: #666666;
+      float: right;
+    }
+    //&-signup{
+    //  background-color: transparent;
+    //  font-size: .8rem;
+    //  padding-left: 0;
+    //  margin-top: 5px;
+    //}
+  }
+
+  .pseudo-input{
+    border-radius: $inputRadius;
+    background-color: $color-background-input;
+    position: relative;
+    overflow: hidden; // hide indicator line on the edges
+    border: 1px solid $color-border;
+
+    .input{
+      border: none;
+      outline: none;
+      position: relative;
+      width: calc(100% - #{$nextButtonWidth}); // - button width (${var}: "interpolating" the calc is a css function not scss)
+      // font-size: 1rem;
+      background-color: transparent;
+      margin: {
+        top: 0;
+        bottom: 0;
+        left: 0;
+      };
+      padding: {
+        top: 10px;
+        left: 15px;
+        bottom: 8px; // 10(inputHeight)-2(indicatorHeight)
+      }
+    }
+
+    .indicator-wrapper{
+      position: relative;
+      height: 2px;
+      width: 100%;
+
+      .indicator{
+        transition: width .2s;
+        height: 100%;
+        background-color: $color-blue;
+
+        &.paintRed{
+          background-color: $color-red;
+        }
+      }
+    }
+  }
+}
+
+
+
+.border{
+  border: 1px solid black;
+}
+input[type=text]:focus, textarea:focus {
+  box-shadow: none;
+  border: none;
+}

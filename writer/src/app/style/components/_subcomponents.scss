@@ -1,0 +1,16 @@
+@import "../../style/utils/vars/var";
+
+.subcomponent{
+  &-title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.dark{
+  .subcomponent-title{
+    color: $color-text-second;
+  }
+}

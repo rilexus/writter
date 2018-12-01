@@ -1,0 +1,24 @@
+@import "../../../../style/utils/vars/var";
+
+.sidebar-wrapper{
+  // background-color: $color-background-second;
+  .sidebar{
+
+  }
+  .notes-list{
+
+  }
+
+  .elevated {
+    z-index: 100;
+  }
+
+  .logout{
+    position: absolute;
+    bottom: 0;
+  }
+  &.dark{
+    // background-color: $color-background-dark-mode;
+  }
+}
+

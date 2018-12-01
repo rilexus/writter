@@ -1,0 +1,52 @@
+@import "../../style/utils/vars/var";
+
+.editor-wrapper{
+  min-width: 800px;
+
+  .sidebar-some{
+    position: absolute;
+    height: 100vh;
+    transition: left .3s;
+    left: -65%;
+    z-index: 100;
+
+    .close-button {
+      position: absolute;
+      right: -95px;
+    }
+
+    .sidebar-wrapper{
+      border-right: 1px solid $color-border;
+      overflow: hidden; // hides scrollbar
+      height: 100%;
+
+      .sidebar{
+        background-color: #f2f2f2;
+        overflow-y: scroll;
+        height: 100%;
+
+      }
+
+      @media (max-width: 775px) {
+        left: -80%;
+      }
+
+    }
+    &.sidebarIsVisible{
+      left: 0%;
+    }
+
+  }
+
+  &.dark{
+    .sidebar-some{
+      .sidebar-wrapper{
+        border-right: 1px solid $color-dark-mode-border;
+        .sidebar{
+          background-color: $color-dark-mode-background-second;
+          border-right: 1px solid $color-dark-mode-border;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: "mongodb"
+    volumes:
+     - './data/db:/data/db'
+    ports:
+        - "27017:27017"
+  server:
+    build: .
+    restart: always
+    depends_on:
+      - mongodb
+    ports:
+      - '3000:3000'
+

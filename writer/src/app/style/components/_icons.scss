@@ -1,0 +1,16 @@
+@import "../utils/vars/var";
+
+.icon{
+  user-select: none;
+  color: $color-text-second;
+  &:hover{
+    color: $color-blue;
+  }
+  &-minimize{
+    font-size: 1.1rem;
+  }
+}
+.material-icons{
+  cursor: pointer;
+  margin: 5px;
+}

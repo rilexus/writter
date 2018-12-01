@@ -1,0 +1,37 @@
+@import "../../../../style/utils/vars/var";
+
+.input-wrapper{
+  display: flex;
+  align-items: center;
+  // text-align: right;
+  min-height: 45px;
+  // padding-left: 25px;
+
+  .input{
+    width: 0;
+    // margin-left: 25px;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    //min-width: 400px;
+    background-color: #e6e6e6;
+    transition: padding-left .2s, padding-right .2s, width .2s;
+
+    &.visible{
+      width: 400px;
+      border: 1px solid $color-border;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  &.dark{
+    .input{
+      background-color: $color-background-dark-mode;
+      &.visible{
+        border: 1px solid $color-dark-mode-border;
+      }
+      color: $color-text-second;
+    }
+  }
+}

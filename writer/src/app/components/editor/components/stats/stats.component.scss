@@ -1,0 +1,18 @@
+@import "../../../../style/utils/vars/var";
+
+.stats-wrapper{
+  .stats{
+    display: flex;
+    justify-content: center;
+
+    .stat{
+      font-size: 10px;
+      margin: {
+        left: 15px;
+        right: 15px;
+        top: 15px;
+      }
+      color: $color-text-second;
+    }
+  }
+}
